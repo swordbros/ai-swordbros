@@ -137,7 +137,24 @@ ALTER TABLE `sw_slider_list_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `sw_slider_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;";
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+INSERT INTO `sw_slider` (`id`, `siteid`, `type`, `code`, `label`, `provider`, `start`, `end`, `config`, `pos`, `status`, `mtime`, `ctime`, `editor`, `domain`) VALUES
+(1, '1.', 0x7374616e64617264, 0x686f6d652d706167652d736c69646572, 'Home Page Standard Slider', '', NULL, NULL, '[]', 0, 0, '2020-10-04 23:38:25', '2020-10-04 23:12:35', 'ahmethamdibayrak@hotmail.com', 'media'),
+(2, '1.', 0x636f7665722d666c6f77, 0x686f6d652d706167652d636f7765722d666c6f772d736c69646572, 'Home Page  Cover Flow Slider', '', NULL, NULL, '[]', 0, 1, '2020-10-04 23:39:15', '2020-10-04 23:14:37', 'ahmethamdibayrak@hotmail.com', 'media');
+
+INSERT INTO `sw_slider_list` (`id`, `parentid`, `siteid`, `key`, `type`, `domain`, `refid`, `start`, `end`, `config`, `pos`, `status`, `mtime`, `ctime`, `editor`) VALUES
+(1, 1, '1.', 0x6d656469617c7374616e646172747c313231, 0x7374616e64617274, 'media', 0x313231, NULL, NULL, '[]', 0, 1, '2020-10-04 23:35:18', '2020-10-04 23:35:18', 'ahmethamdibayrak@hotmail.com'),
+(2, 1, '1.', 0x6d656469617c7374616e646172747c313232, 0x7374616e64617274, 'media', 0x313232, NULL, NULL, '[]', 1, 1, '2020-10-04 23:35:18', '2020-10-04 23:35:18', 'ahmethamdibayrak@hotmail.com'),
+(3, 2, '1.', 0x6d656469617c7374616e646172747c313233, 0x7374616e64617274, 'media', 0x313233, NULL, NULL, '[]', 0, 1, '2020-10-04 23:36:09', '2020-10-04 23:36:09', 'ahmethamdibayrak@hotmail.com'),
+(4, 2, '1.', 0x6d656469617c7374616e646172747c313234, 0x7374616e64617274, 'media', 0x313234, NULL, NULL, '[]', 1, 1, '2020-10-04 23:36:09', '2020-10-04 23:36:09', 'ahmethamdibayrak@hotmail.com'),
+(5, 2, '1.', 0x6d656469617c7374616e646172747c313235, 0x7374616e64617274, 'media', 0x313235, NULL, NULL, '[]', 2, 1, '2020-10-04 23:36:09', '2020-10-04 23:36:09', 'ahmethamdibayrak@hotmail.com'),
+(6, 2, '1.', 0x6d656469617c7374616e646172747c313236, 0x7374616e64617274, 'media', 0x313236, NULL, NULL, '[]', 3, 1, '2020-10-04 23:39:15', '2020-10-04 23:39:15', 'ahmethamdibayrak@hotmail.com'),
+(7, 2, '1.', 0x6d656469617c7374616e646172747c313237, 0x7374616e64617274, 'media', 0x313237, NULL, NULL, '[]', 4, 1, '2020-10-04 23:39:15', '2020-10-04 23:39:15', 'ahmethamdibayrak@hotmail.com');
+
+INSERT INTO `sw_slider_type` (`id`, `siteid`, `domain`, `code`, `label`, `pos`, `status`, `mtime`, `ctime`, `editor`) VALUES
+(1, '1.', 'slider', 0x7374616e64617264, 'Standard Slider', 0, 1, '2020-10-04 23:16:33', '2020-10-04 23:11:18', 'ahmethamdibayrak@hotmail.com'),
+(2, '1.', 'slider', 0x636f7665722d666c6f77, 'Cover Flow Slider', 0, 1, '2020-10-04 23:11:50', '2020-10-04 23:11:50', 'ahmethamdibayrak@hotmail.com');";
         foreach(explode(';', $sw_slider) as $sql){
             if(!empty($sql)){
                 $parts = explode('`', $sql);
