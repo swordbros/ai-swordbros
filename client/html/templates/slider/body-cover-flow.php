@@ -84,7 +84,6 @@
 .move img {
 	width: 50px;
 	height: 30px;
-	border: 3px solid #333;
 }
 .move.active img {
 	border: 3px solid #5a5;
