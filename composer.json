@@ -1,7 +1,7 @@
 {
 	"name": "swordbros/ai-swordbros",
 	"description": "Aimeos ai-swordbros extension",
-	"keywords": ["aimeos", "extension"],
+	"keywords": ["aimeos", "swordbros", "extension"],
 	"type": "aimeos-extension",
 	"license": "LGPL-3.0",
 	"prefer-stable": true,
