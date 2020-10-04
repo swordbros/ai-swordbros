@@ -34,8 +34,7 @@ Add to your composer.json
 
 ```
 # Show Slider on your web site
-Add your template blade file this code
-Setup include demo slider data.
+Add your template blade file this code. Setup include demo slider data.
 ```
   <?php  echo \Aimeos\Shop\Facades\Shop::get('swordbros/slider')->getBody() ?>
 ```
