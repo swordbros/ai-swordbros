@@ -48,7 +48,7 @@ $delConfig = $this->config( 'admin/jqadm/url/delete/config', [] );
  * @since 2017.07
  * @category Developer
  */
-$default = ['slider.status', 'slider.type', 'slider.label', 'slider.provider'];
+$default = ['slider.status', 'slider.type', 'slider.label', 'slider.provider', 'slider.domain'];
 $default = $this->config( 'admin/jqadm/slider/fields', $default );
 $fields = $this->session( 'aimeos/admin/jqadm/slider/fields', $default );
 

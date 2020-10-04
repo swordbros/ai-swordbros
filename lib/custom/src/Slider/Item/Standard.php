@@ -257,6 +257,28 @@ class Standard
 		return $this->set( 'slider.status', $status );
 	}
 
+	/**
+	 * Returns the status of the item.
+	 *
+	 * @return int Status of the item
+	 */
+	public function getDomain() : string
+	{
+		return $this->get( 'slider.domain', 1 );
+	}
+
+
+	/**
+	 * Sets the status of the item.
+	 *
+	 * @param int $status Status of the item
+	 * @return \Aimeos\MShop\Slider\Item\Iface Slider item for chaining method calls
+	 */
+	public function setDomain( string $domain ) : \Aimeos\MShop\Common\Item\Iface
+	{
+		return $this->set( 'slider.domain', $domain );
+	}
+
 
 	/**
 	 * Returns the item type
@@ -304,6 +326,7 @@ class Standard
 				case 'slider.datestart': $item = $item->setDateStart( $value ); break;
 				case 'slider.dateend': $item = $item->setDateEnd( $value ); break;
 				case 'slider.status': $item = $item->setStatus( (int) $value ); break;
+				case 'slider.domain': $item = $item->setDomain( $value ); break;
 				case 'slider.config': $item = $item->setConfig( (array) $value ); break;
 				case 'slider.position': $item = $item->setPosition( (int) $value ); break;
 				default: continue 2;
@@ -335,6 +358,7 @@ class Standard
 		$list['servir.dateend'] = $this->getDateEnd();
 		$list['slider.config'] = $this->getConfig();
 		$list['slider.status'] = $this->getStatus();
+		$list['slider.domain'] = $this->getDomain();
 
 		return $list;
 	}

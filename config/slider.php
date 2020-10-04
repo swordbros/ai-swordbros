@@ -11,7 +11,7 @@ return array(
 			'subparts' => [
 				'media' => 'media',
 				'text' => 'text',
-				'price' => 'price'
+				/*'price' => 'price'*/
 			],
 		],
 		'media' => [
@@ -343,9 +343,9 @@ return array(
 				'ansi' => '
 					INSERT INTO "mshop_slider" ( :names
 						"pos", "type", "code", "label", "provider", "start", "end",
-						"config", "status", "mtime", "editor", "siteid", "ctime"
+						"config", "status", "domain", "mtime", "editor", "siteid", "ctime"
 					) VALUES ( :values
-						?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+						?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 					)
 				'
 			),
@@ -354,7 +354,7 @@ return array(
 					UPDATE "mshop_slider"
 					SET :names
 						"pos" = ?, "type" = ?, "code" = ?, "label" = ?, "provider" = ?, "start" = ?,
-						"end" = ?, "config" = ?, "status" = ?, "mtime" = ?, "editor" = ?
+						"end" = ?, "config" = ?, "status" = ?, "domain" = ?, "mtime" = ?, "editor" = ?
 					WHERE "siteid" = ? AND "id" = ?
 				'
 			),
@@ -367,13 +367,14 @@ return array(
 						mser."provider" AS "slider.provider", mser."config" AS "slider.config",
 						mser."start" AS "slider.datestart", mser."end" AS "slider.dateend",
 						mser."status" AS "slider.status", mser."mtime" AS "slider.mtime",
+						mser."domain" AS "slider.domain", mser."domain" AS "slider.domain",
 						mser."editor" AS "slider.editor",	mser."ctime" AS "slider.ctime"
 					FROM "mshop_slider" AS mser
 					:joins
 					WHERE :cond
 					GROUP BY :columns :group
 						mser."id", mser."siteid", mser."pos", mser."type", mser."code", mser."label",
-						mser."provider", mser."config", mser."start", mser."end", mser."status", mser."mtime",
+						mser."provider", mser."config", mser."start", mser."end", mser."status", mser."domain", mser."mtime",
 						mser."editor",	mser."ctime"
 					ORDER BY :order
 					OFFSET :start ROWS FETCH NEXT :size ROWS ONLY
@@ -386,6 +387,7 @@ return array(
 						mser."provider" AS "slider.provider", mser."config" AS "slider.config",
 						mser."start" AS "slider.datestart", mser."end" AS "slider.dateend",
 						mser."status" AS "slider.status", mser."mtime" AS "slider.mtime",
+						mser."domain" AS "slider.domain", mser."domain" AS "slider.domain",
 						mser."editor" AS "slider.editor",	mser."ctime" AS "slider.ctime"
 					FROM "mshop_slider" AS mser
 					:joins

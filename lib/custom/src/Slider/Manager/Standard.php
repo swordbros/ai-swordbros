@@ -95,6 +95,13 @@ class Standard
 			'type' => 'integer',
 			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_INT,
 		),
+		'slider.domain' => array(
+			'code' => 'slider.domain',
+			'internalcode' => 'mser."domain"',
+			'label' => 'Domain',
+			'type' => 'string',
+			'internaltype' => \Aimeos\MW\DB\Statement\Base::PARAM_STR,
+		),
 		'slider.config' => array(
 			'code' => 'slider.config',
 			'internalcode' => 'mser."config"',
@@ -357,6 +364,7 @@ class Standard
 			$stmt->bind( $idx++, $item->getDateEnd() );
 			$stmt->bind( $idx++, json_encode( $item->getConfig() ) );
 			$stmt->bind( $idx++, $item->getStatus(), \Aimeos\MW\DB\Statement\Base::PARAM_INT );
+			$stmt->bind( $idx++, $item->getDomain() );
 			$stmt->bind( $idx++, $date ); // mtime
 			$stmt->bind( $idx++, $context->getEditor() );
 			$stmt->bind( $idx++, $context->getLocale()->getSiteId() );
