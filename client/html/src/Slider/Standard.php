@@ -247,7 +247,7 @@ $default = 'slider/body-'.$view->sliderType;
 
 		$domains = array( 'text', 'media' ) ;
         $items = [];
-        $sliderType = 'standart';
+        $sliderType = 'standard';
 		$rows = \Aimeos\Controller\Frontend::create( $this->getContext(), 'slider' )
 			->uses( $domains )->type( $attrTypes )->compare( '!=', 'slider.type', ['date', 'price', 'text'] )
 			->sort( 'position' )->slice( 0, 10000 )->search();
