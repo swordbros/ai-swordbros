@@ -1,5 +1,5 @@
 {
-	"name": "aimeos/ai-swordbros",
+	"name": "swordbros/ai-swordbros",
 	"description": "Aimeos ai-swordbros extension",
 	"keywords": ["aimeos", "extension"],
 	"type": "aimeos-extension",
