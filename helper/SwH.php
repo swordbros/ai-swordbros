@@ -1,6 +1,6 @@
 <?php
 class SwH{
-   static function get_language(){
+   static function get_languages(){
         try
         {
             $query = \DB::table('mshop_locale')->select('langid')->groupBy('langid')->having('langid', '>', '')->get();

@@ -6,11 +6,43 @@
  */
 
 $enc = $this->encoder();
+$items =  $this->get( 'mediaData', []  );
+foreach($items as $data_item_key=>$data_item){
+    foreach(SwH::get_languages() as $language){
+        if(isset($data_item['slider.lists.config'])){
+            if(isset($data_item['slider.lists.config']['content-'.$language['langid']])){
+                $content = $data_item['slider.lists.config']['content-'.$language['langid']];
+            } else{
+                $content = false;
+            }
+            if(isset($data_item['slider.lists.config']['url-'.$language['langid']])){
+                $url = $data_item['slider.lists.config']['url-'.$language['langid']];
+            } else{
+                $url = false;
+            }
+        } else{
+            $content = false;
+            $url = false;
+        }
+        $data_item['slider.lists.config']['content-'.$language['langid']] = $content;
+        $data_item['slider.lists.config']['url-'.$language['langid']] = $url;
+        if($content === false){
+            $data_item['config'][] = array('key'=>'content-'.$language['langid'], 'val'=>'' ); 
+        }
+        if($url === false){
+            $data_item['config'][] = array('key'=>'url-'.$language['langid'], 'val'=>'' ); 
+        }
+        $items[$data_item_key] = $data_item;
+    }
+}
+
+$data_items = $enc->attr( $items );
+
 ?>
 <div id="media" class="item-media content-block tab-pane fade" role="tablist" aria-labelledby="media">
 
 	<div id="item-media-group"
-		data-items="<?= $enc->attr( $this->get( 'mediaData', [] ) ); ?>"
+		data-items="<?= $data_items; ?>"
 		data-siteid="<?= $this->site()->siteid() ?>"
 		data-domain="slider" >
 
