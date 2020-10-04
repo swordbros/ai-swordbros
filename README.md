@@ -15,14 +15,21 @@ composer require swordbros/ai-swordbros
 Add to your composer.json
 
 ```
-"classmap": [
+    "require": {
+         ...
+        "swordbros/ai-swordbros": "^1.0"
+    },
+    
+    "autoload": {
+        "classmap": [
             ...
             "ext/ai-swordbros/admin/jqadm/src",
             "ext/ai-swordbros/lib/custom/src",
             "ext/ai-swordbros/client/html/src",
             "ext/ai-swordbros/controller/frontend/src",
             "ext/ai-swordbros/helper"
-]
+        ]
+    },
 ```
 
 
