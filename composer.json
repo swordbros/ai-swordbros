@@ -1,7 +1,7 @@
 {
-	"name": "aimeos/ai-swordbros",
-	"description": "Aimeos ai-swordbros extension",
-	"keywords": ["aimeos", "extension"],
+	"name": "swordbros/ai-swordbros",
+	"description": "Aimeos ai-swordbros extension - Slider Extension by SWORD BROS.",
+	"keywords": ["aimeos", "swordbros", "extension"],
 	"type": "aimeos-extension",
 	"license": "LGPL-3.0",
 	"prefer-stable": true,
@@ -10,6 +10,21 @@
 		"php": "~7.1",
 		"composer/installers": "^1.0"
 	},
+	  "authors": [
+    {
+      "name": "Ahmet Hamdi",
+      "email": "ahmethamdi@swordbros.ru",
+        "role": "Software Architect",
+        "homepage": "https://swordbros.com/"
+    }
+   
+  ],
+  "keywords": [
+
+    "slider",
+  
+    "swordbros"
+  ],
 	"autoload": {
 		"psr-4": {
 			"Aimeos\\MW\\": "lib/mwlib/src/MW/",
