@@ -38,4 +38,5 @@ Add your template blade file this code
 ```
   <?php  echo \Aimeos\Shop\Facades\Shop::get('swordbros/slider')->getBody() ?>
 ```
-
+![Slider Standard](https://tulparstudyo.net/images/sliderstandart.png)
+![Slider Cover Flow](https://tulparstudyo.net/images/slider-cover-flow.png)
