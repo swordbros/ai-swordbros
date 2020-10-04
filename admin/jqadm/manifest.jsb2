@@ -1,0 +1,22 @@
+{
+	"projectName": "ai-swordbros",
+	"licenseText": "proprietary",
+	"pkgs": [{
+		"name": "ai-swordbros CSS",
+		"file": "ai-swordbros.css",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.css",
+			"path": "themes/"
+		}]
+	}, {
+		"name": "ai-swordbros JS",
+		"file": "ai-swordbros.js",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.js",
+			"path": "themes/"
+		}]
+	}],
+	"resources" : []
+}
