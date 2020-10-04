@@ -137,7 +137,7 @@ class Standard
 		'slider:has' => array(
 			'code' => 'slider:has()',
 			'internalcode' => ':site AND :key AND mserli."id"',
-			'internaldeps' => ['LEFT JOIN "mshop_slider_list" AS mserli ON ( mserli."parentid" = mser."id" )'],
+			'internaldeps' => ['LEFT JOIN "sw_slider_list" AS mserli ON ( mserli."parentid" = mser."id" )'],
 			'label' => 'Slider has list item, parameter(<domain>[,<list type>[,<reference ID>)]]',
 			'type' => 'null',
 			'internaltype' => 'null',
@@ -467,7 +467,7 @@ class Standard
 			{
 				if( ( $row['slider.config'] = json_decode( $config = $row['slider.config'], true ) ) === null )
 				{
-					$msg = sprintf( 'Invalid JSON as result of search for ID "%2$s" in "%1$s": %3$s', 'mshop_slider.config', $row['slider.id'], $config );
+					$msg = sprintf( 'Invalid JSON as result of search for ID "%2$s" in "%1$s": %3$s', 'sw_slider.config', $row['slider.id'], $config );
 					$this->getContext()->getLogger()->log( $msg, \Aimeos\MW\Logger\Base::WARN );
 				}
 

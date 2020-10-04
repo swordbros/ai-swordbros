@@ -35,13 +35,13 @@ return array(
 				'standard' => array(
 					'delete' => array(
 						'ansi' => '
-							DELETE FROM "mshop_slider_list_type"
+							DELETE FROM "sw_slider_list_type"
 							WHERE :cond AND siteid = ?
 						'
 					),
 					'insert' => array(
 						'ansi' => '
-							INSERT INTO "mshop_slider_list_type" ( :names
+							INSERT INTO "sw_slider_list_type" ( :names
 								"code", "domain", "label", "pos", "status",
 								"mtime", "editor", "siteid", "ctime"
 							) VALUES ( :values
@@ -51,7 +51,7 @@ return array(
 					),
 					'update' => array(
 						'ansi' => '
-							UPDATE "mshop_slider_list_type"
+							UPDATE "sw_slider_list_type"
 							SET :names
 								"code" = ?, "domain" = ?, "label" = ?, "pos" = ?,
 								"status" = ?, "mtime" = ?, "editor" = ?
@@ -66,7 +66,7 @@ return array(
 								mserlity."label" AS "slider.lists.type.label", mserlity."status" AS "slider.lists.type.status",
 								mserlity."mtime" AS "slider.lists.type.mtime", mserlity."editor" AS "slider.lists.type.editor",
 								mserlity."ctime" AS "slider.lists.type.ctime", mserlity."pos" AS "slider.lists.type.position"
-							FROM "mshop_slider_list_type" AS mserlity
+							FROM "sw_slider_list_type" AS mserlity
 							:joins
 							WHERE :cond
 							ORDER BY :order
@@ -79,7 +79,7 @@ return array(
 								mserlity."label" AS "slider.lists.type.label", mserlity."status" AS "slider.lists.type.status",
 								mserlity."mtime" AS "slider.lists.type.mtime", mserlity."editor" AS "slider.lists.type.editor",
 								mserlity."ctime" AS "slider.lists.type.ctime", mserlity."pos" AS "slider.lists.type.position"
-							FROM "mshop_slider_list_type" AS mserlity
+							FROM "sw_slider_list_type" AS mserlity
 							:joins
 							WHERE :cond
 							ORDER BY :order
@@ -91,7 +91,7 @@ return array(
 							SELECT COUNT(*) AS "count"
 							FROM (
 								SELECT mserlity."id"
-								FROM "mshop_slider_list_type" as mserlity
+								FROM "sw_slider_list_type" as mserlity
 								:joins
 								WHERE :cond
 								ORDER BY mserlity."id"
@@ -102,7 +102,7 @@ return array(
 							SELECT COUNT(*) AS "count"
 							FROM (
 								SELECT mserlity."id"
-								FROM "mshop_slider_list_type" as mserlity
+								FROM "sw_slider_list_type" as mserlity
 								:joins
 								WHERE :cond
 								ORDER BY mserlity."id"
@@ -113,7 +113,7 @@ return array(
 					'newid' => array(
 						'db2' => 'SELECT IDENTITY_VAL_LOCAL()',
 						'mysql' => 'SELECT LAST_INSERT_ID()',
-						'oracle' => 'SELECT mshop_slider_list_type_seq.CURRVAL FROM DUAL',
+						'oracle' => 'SELECT sw_slider_list_type_seq.CURRVAL FROM DUAL',
 						'pgsql' => 'SELECT lastval()',
 						'sqlite' => 'SELECT last_insert_rowid()',
 						'sqlsrv' => 'SELECT @@IDENTITY',
@@ -127,7 +127,7 @@ return array(
 						SELECT "key", COUNT("id") AS "count"
 						FROM (
 							SELECT :key AS "key", mserli."id" AS "id"
-							FROM "mshop_slider_list" AS mserli
+							FROM "sw_slider_list" AS mserli
 							:joins
 							WHERE :cond
 							GROUP BY :key, mserli."id"
@@ -140,7 +140,7 @@ return array(
 						SELECT "key", COUNT("id") AS "count"
 						FROM (
 							SELECT :key AS "key", mserli."id" AS "id"
-							FROM "mshop_slider_list" AS mserli
+							FROM "sw_slider_list" AS mserli
 							:joins
 							WHERE :cond
 							GROUP BY :key, mserli."id"
@@ -152,13 +152,13 @@ return array(
 				),
 				'delete' => array(
 					'ansi' => '
-						DELETE FROM "mshop_slider_list"
+						DELETE FROM "sw_slider_list"
 						WHERE :cond AND siteid = ?
 					'
 				),
 				'insert' => array(
 					'ansi' => '
-						INSERT INTO "mshop_slider_list" ( :names
+						INSERT INTO "sw_slider_list" ( :names
 							"parentid", "key", "type", "domain", "refid", "start", "end",
 							"config", "pos", "status", "mtime", "editor", "siteid", "ctime"
 						) VALUES ( :values
@@ -168,7 +168,7 @@ return array(
 				),
 				'update' => array(
 					'ansi' => '
-						UPDATE "mshop_slider_list"
+						UPDATE "sw_slider_list"
 						SET :names
 							"parentid"=?, "key" = ?, "type" = ?, "domain" = ?, "refid" = ?, "start" = ?,
 							"end" = ?, "config" = ?, "pos" = ?, "status" = ?, "mtime" = ?, "editor" = ?
@@ -185,7 +185,7 @@ return array(
 							mserli."config" AS "slider.lists.config", mserli."pos" AS "slider.lists.position",
 							mserli."status" AS "slider.lists.status", mserli."mtime" AS "slider.lists.mtime",
 							mserli."editor" AS "slider.lists.editor", mserli."ctime" AS "slider.lists.ctime"
-						FROM "mshop_slider_list" AS mserli
+						FROM "sw_slider_list" AS mserli
 						:joins
 						WHERE :cond
 						ORDER BY :order
@@ -200,7 +200,7 @@ return array(
 							mserli."config" AS "slider.lists.config", mserli."pos" AS "slider.lists.position",
 							mserli."status" AS "slider.lists.status", mserli."mtime" AS "slider.lists.mtime",
 							mserli."editor" AS "slider.lists.editor", mserli."ctime" AS "slider.lists.ctime"
-						FROM "mshop_slider_list" AS mserli
+						FROM "sw_slider_list" AS mserli
 						:joins
 						WHERE :cond
 						ORDER BY :order
@@ -212,7 +212,7 @@ return array(
 						SELECT COUNT(*) AS "count"
 						FROM (
 							SELECT mserli."id"
-							FROM "mshop_slider_list" AS mserli
+							FROM "sw_slider_list" AS mserli
 							:joins
 							WHERE :cond
 							ORDER BY mserli."id"
@@ -223,7 +223,7 @@ return array(
 						SELECT COUNT(*) AS "count"
 						FROM (
 							SELECT mserli."id"
-							FROM "mshop_slider_list" AS mserli
+							FROM "sw_slider_list" AS mserli
 							:joins
 							WHERE :cond
 							ORDER BY mserli."id"
@@ -234,7 +234,7 @@ return array(
 				'newid' => array(
 					'db2' => 'SELECT IDENTITY_VAL_LOCAL()',
 					'mysql' => 'SELECT LAST_INSERT_ID()',
-					'oracle' => 'SELECT mshop_slider_list_seq.CURRVAL FROM DUAL',
+					'oracle' => 'SELECT sw_slider_list_seq.CURRVAL FROM DUAL',
 					'pgsql' => 'SELECT lastval()',
 					'sqlite' => 'SELECT last_insert_rowid()',
 					'sqlsrv' => 'SELECT @@IDENTITY',
@@ -246,13 +246,13 @@ return array(
 			'standard' => array(
 				'delete' => array(
 					'ansi' => '
-						DELETE FROM "mshop_slider_type"
+						DELETE FROM "sw_slider_type"
 						WHERE :cond AND siteid = ?
 					'
 				),
 				'insert' => array(
 					'ansi' => '
-						INSERT INTO "mshop_slider_type" ( :names
+						INSERT INTO "sw_slider_type" ( :names
 							"code", "domain", "label", "pos", "status",
 							"mtime", "editor", "siteid", "ctime"
 						) VALUES ( :values
@@ -262,7 +262,7 @@ return array(
 				),
 				'update' => array(
 					'ansi' => '
-						UPDATE "mshop_slider_type"
+						UPDATE "sw_slider_type"
 						SET :names
 							"code" = ?, "domain" = ?, "label" = ?, "pos" = ?,
 							"status" = ?, "mtime" = ?, "editor" = ?
@@ -277,7 +277,7 @@ return array(
 							mserty."label" AS "slider.type.label", mserty."status" AS "slider.type.status",
 							mserty."mtime" AS "slider.type.mtime", mserty."editor" AS "slider.type.editor",
 							mserty."ctime" AS "slider.type.ctime", mserty."pos" AS "slider.type.position"
-						FROM "mshop_slider_type" AS mserty
+						FROM "sw_slider_type" AS mserty
 						:joins
 						WHERE :cond
 						ORDER BY :order
@@ -290,7 +290,7 @@ return array(
 							mserty."label" AS "slider.type.label", mserty."status" AS "slider.type.status",
 							mserty."mtime" AS "slider.type.mtime", mserty."editor" AS "slider.type.editor",
 							mserty."ctime" AS "slider.type.ctime", mserty."pos" AS "slider.type.position"
-						FROM "mshop_slider_type" AS mserty
+						FROM "sw_slider_type" AS mserty
 						:joins
 						WHERE :cond
 						ORDER BY :order
@@ -302,7 +302,7 @@ return array(
 						SELECT COUNT(*) AS "count"
 						FROM (
 							SELECT mserty."id"
-							FROM "mshop_slider_type" AS mserty
+							FROM "sw_slider_type" AS mserty
 							:joins
 							WHERE :cond
 							ORDER BY mserty."id"
@@ -313,7 +313,7 @@ return array(
 						SELECT COUNT(*) AS "count"
 						FROM (
 							SELECT mserty."id"
-							FROM "mshop_slider_type" AS mserty
+							FROM "sw_slider_type" AS mserty
 							:joins
 							WHERE :cond
 							ORDER BY mserty."id"
@@ -324,7 +324,7 @@ return array(
 				'newid' => array(
 					'db2' => 'SELECT IDENTITY_VAL_LOCAL()',
 					'mysql' => 'SELECT LAST_INSERT_ID()',
-					'oracle' => 'SELECT mshop_slider_type_seq.CURRVAL FROM DUAL',
+					'oracle' => 'SELECT sw_slider_type_seq.CURRVAL FROM DUAL',
 					'pgsql' => 'SELECT lastval()',
 					'sqlite' => 'SELECT last_insert_rowid()',
 					'sqlsrv' => 'SELECT @@IDENTITY',
@@ -335,13 +335,13 @@ return array(
 		'standard' => array(
 			'delete' => array(
 				'ansi' => '
-					DELETE FROM "mshop_slider"
+					DELETE FROM "sw_slider"
 					WHERE :cond AND siteid = ?
 				'
 			),
 			'insert' => array(
 				'ansi' => '
-					INSERT INTO "mshop_slider" ( :names
+					INSERT INTO "sw_slider" ( :names
 						"pos", "type", "code", "label", "provider", "start", "end",
 						"config", "status", "domain", "mtime", "editor", "siteid", "ctime"
 					) VALUES ( :values
@@ -351,7 +351,7 @@ return array(
 			),
 			'update' => array(
 				'ansi' => '
-					UPDATE "mshop_slider"
+					UPDATE "sw_slider"
 					SET :names
 						"pos" = ?, "type" = ?, "code" = ?, "label" = ?, "provider" = ?, "start" = ?,
 						"end" = ?, "config" = ?, "status" = ?, "domain" = ?, "mtime" = ?, "editor" = ?
@@ -369,7 +369,7 @@ return array(
 						mser."status" AS "slider.status", mser."mtime" AS "slider.mtime",
 						mser."domain" AS "slider.domain", mser."domain" AS "slider.domain",
 						mser."editor" AS "slider.editor",	mser."ctime" AS "slider.ctime"
-					FROM "mshop_slider" AS mser
+					FROM "sw_slider" AS mser
 					:joins
 					WHERE :cond
 					GROUP BY :columns :group
@@ -389,7 +389,7 @@ return array(
 						mser."status" AS "slider.status", mser."mtime" AS "slider.mtime",
 						mser."domain" AS "slider.domain", mser."domain" AS "slider.domain",
 						mser."editor" AS "slider.editor",	mser."ctime" AS "slider.ctime"
-					FROM "mshop_slider" AS mser
+					FROM "sw_slider" AS mser
 					:joins
 					WHERE :cond
 					GROUP BY :group mser."id"
@@ -402,7 +402,7 @@ return array(
 					SELECT count(*) as "count"
 					FROM (
 						SELECT mser."id"
-						FROM "mshop_slider" AS mser
+						FROM "sw_slider" AS mser
 						:joins
 						WHERE :cond
 						GROUP BY mser."id"
@@ -414,7 +414,7 @@ return array(
 					SELECT count(*) as "count"
 					FROM (
 						SELECT mser."id"
-						FROM "mshop_slider" AS mser
+						FROM "sw_slider" AS mser
 						:joins
 						WHERE :cond
 						GROUP BY mser."id"
@@ -426,7 +426,7 @@ return array(
 			'newid' => array(
 				'db2' => 'SELECT IDENTITY_VAL_LOCAL()',
 				'mysql' => 'SELECT LAST_INSERT_ID()',
-				'oracle' => 'SELECT mshop_slider_seq.CURRVAL FROM DUAL',
+				'oracle' => 'SELECT sw_slider_seq.CURRVAL FROM DUAL',
 				'pgsql' => 'SELECT lastval()',
 				'sqlite' => 'SELECT last_insert_rowid()',
 				'sqlsrv' => 'SELECT @@IDENTITY',
