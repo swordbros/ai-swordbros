@@ -41,5 +41,5 @@
   </script>
 </div>
       <?php else: ?>
-<!--Slider içinde resim yok-->
+<!-- Slider Image Not Found -->
       <?php endif; ?>

@@ -195,12 +195,11 @@ window.addEventListener("load", function(){
       <?php foreach($this->items as $key=>$item){?>
 			<a class="move" href="#"><img src="<?=asset($item['image_url'])?>"></a>
       <?php } ?>
-
 			<div id="move_back"><a href="#">❰</a></div>
 			<div id="move_next"><a href="#">❱</a></div>
 		</div>
 
 </div>
       <?php else: ?>
-<!--Slider içinde resim yok-->
+<!-- Slider Image Not Found -->
       <?php endif; ?>
