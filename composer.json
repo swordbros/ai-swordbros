@@ -8,8 +8,8 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": "~7.1",
-		"aimeos/ai-payments": "~2020.07.1",
-		"composer/installers": "^1.0"
+		"composer/installers": "^1.0",
+		"aimeos/aimeos-core": "2020.07.*"
 	},
 	"autoload": {
 		"psr-4": {
