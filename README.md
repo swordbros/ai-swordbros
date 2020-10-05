@@ -31,6 +31,13 @@ Add to your composer.json
             "ext/ai-swordbros/helper"
         ]
     },
+    "scripts": {
+        "post-update-cmd": [
+            ...
+            "@php artisan migrate --path=ext/ai-swordbros/lib/custom/setup/slider"
+        ]
+    }
+
 
 ```
 # Show Slider on your web site
