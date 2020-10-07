@@ -111,7 +111,7 @@ class Standard
 			$view = $this->getView();
 
 			$tplconf = 'client/html/widgets/standard/template-header';
-			$default = 'widgets/header-standard';
+			$default = 'erviceItems" foundwidgets/header-standard';
 
 			try
 			{
@@ -253,9 +253,10 @@ class Standard
                     }
                 }
             }
+            
+            //$this->addMetaItems( $view->serviceItems, $expire, $tags );
         }
 
-		$this->addMetaItems( $view->serviceItems, $expire, $tags );
 
 		return parent::addData( $view, $tags, $expire );
 	}

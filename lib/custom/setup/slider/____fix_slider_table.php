@@ -14,7 +14,7 @@ class FixSliderTable extends Migration
      */
     public function up()
     {
-        $this->fix_tables();
+        $this->fix_slider_tables();
     }
 
     /**
@@ -26,7 +26,7 @@ class FixSliderTable extends Migration
     {   
         try{
             echo " `sw_slider`, `sw_slider_list`, `sw_slider_list_type`, `sw_slider_type` is Dropping...\r\n";
-            // DB::statement("DROP TABLE `sw_slider`, `sw_slider_list`, `sw_slider_list_type`, `sw_slider_type`;");
+            DB::statement("DROP TABLE `sw_slider`, `sw_slider_list`, `sw_slider_list_type`, `sw_slider_type`;");
             echo " Tables Dropped ✓\r\n";
         } catch(Exception $ex){
             echo " Dropping is terminated. \r\n";
@@ -34,7 +34,7 @@ class FixSliderTable extends Migration
 
     }
     
-    private static function fix_tables(){
+    private static function fix_slider_tables(){
         $sw_slider = "CREATE TABLE `sw_slider` (
   `id` int(11) NOT NULL,
   `siteid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -169,7 +169,5 @@ INSERT INTO `sw_slider_type` (`id`, `siteid`, `domain`, `code`, `label`, `pos`, 
         }
 
     }
-    private static function copy_assets_files(){
-        
-    }
+
 }

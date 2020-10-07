@@ -257,13 +257,15 @@ $default = 'slider/body-'.$view->sliderType;
                 foreach($row->getListItems() as $item){ 
 
                     $refItem = $item->getRefItem();
-                    $image_url = $refItem->get('media.url');
-                    if($image_url){
-                        $langid = $this->getContext()->getLocale()->getLanguageId();
-                        $config = $item->getConfig();
-                        $content = isset($config['content-'.$langid])?$config['content-'.$langid]:'';
-                        $url = isset($config['url-'.$langid])?$config['url-'.$langid]:'';
-                        $items[] = ['image_url'=>$image_url, 'content'=>$content, 'url'=>$url];
+                    if($refItem){
+                        $image_url = $refItem->get('media.url');
+                        if($image_url){
+                            $langid = $this->getContext()->getLocale()->getLanguageId();
+                            $config = $item->getConfig();
+                            $content = isset($config['content-'.$langid])?$config['content-'.$langid]:'';
+                            $url = isset($config['url-'.$langid])?$config['url-'.$langid]:'';
+                            $items[] = ['image_url'=>$image_url, 'content'=>$content, 'url'=>$url];
+                        }
                     }
                     /*
                     if($refItem->get('text.languageid') == $context->getLocale()->getLanguageId() ){

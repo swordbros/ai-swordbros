@@ -55,15 +55,16 @@ class FixSwordbrosTable extends Migration
         $files[] = public_path('swordbros/js/swordbros.js');
         $files[] = public_path('swordbros/img/empty.png');
         foreach($files as $file ){
+            echo " File: ".$file;
             if( !is_file($file)){
-                mkdir(dirname($file));
+                if(!is_dir(dirname($file)))mkdir(dirname($file), 0777, true);
                 if(fopen($file, "w")){
-                    echo " $file created ✓\r\n";
+                    echo " is created ✓\r\n";
                 } else {
-                    echo " $file not created ×\r\n";
+                    echo " is not created ×\r\n";
                 }
             } else{
-                 echo " $file allreadey exists ×\r\n";
+                 echo " is allreadey exists ×\r\n";
             }
         }
     }
