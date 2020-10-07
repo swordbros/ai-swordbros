@@ -311,8 +311,8 @@ $this->getContext()->getSession()->set( 'info', [$this->getContext()->getI18n()-
 		 * @since 2016.04
 		 * @category Developer
 		 */
-		$tplconf = 'admin/jqadm/swordbros/review/template-list';
-		$default = 'swordbros/review/list-standard';
+		$tplconf = 'admin/jqadm/review/template-list';
+		$default = 'review/list-standard';
 
 		return $view->render( $view->config( $tplconf, $default ) );
 	}
@@ -542,8 +542,8 @@ $this->getContext()->getSession()->set( 'info', [$this->getContext()->getI18n()-
 		 * @since 2016.04
 		 * @category Developer
 		 */
-		$tplconf = 'admin/jqadm/swordbros/review/template-item';
-		$default = 'swordbros/review/item-standard';
+		$tplconf = 'admin/jqadm/review/template-item';
+		$default = 'review/item-standard';
 
 		return $view->render( $view->config( $tplconf, $default ) );
 	}

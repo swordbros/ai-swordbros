@@ -139,7 +139,7 @@ class Standard
 		$this->setResourceName( 'db-review' );
 
 		$level = \Aimeos\MShop\Locale\Manager\Base::SITE_ALL;
-		$level = $context->getConfig()->get( 'mshop/review/manager/sitemode', $level );
+		$level = $context->getConfig()->get( 'review/manager/sitemode', $level );
 
 
 		$this->searchConfig['review:has']['function'] = function( &$source, array $params ) use ( $level ) {
@@ -175,12 +175,12 @@ class Standard
 	 */
 	public function clear( array $siteids ) : \Aimeos\MShop\Common\Manager\Iface
 	{
-		$path = 'mshop/review/manager/submanagers';
+		$path = 'review/manager/submanagers';
 		foreach( $this->getContext()->getConfig()->get( $path, [] ) as $domain ) {
 			$this->getObject()->getSubManager( $domain )->clear( $siteids );
 		}
 
-		return $this->clearBase( $siteids, 'mshop/review/manager/standard/delete' );
+		return $this->clearBase( $siteids, 'review/manager/standard/delete' );
 	}
 
 
@@ -205,7 +205,7 @@ class Standard
 	 */
 	public function getResourceType( bool $withsub = true ) : array
 	{
-		$path = 'mshop/review/manager/submanagers';
+		$path = 'review/manager/submanagers';
 		return $this->getResourceTypeBase( 'review', $path, array('lists' ), $withsub );
         // itam kullanırsan burası önemli burda itemin datalarını almkaiçin işlem var
 		//return $this->getResourceTypeBase( 'review', $path, array( 'address', 'lists' ), $withsub );
@@ -220,7 +220,7 @@ class Standard
 	 */
 	public function getSearchAttributes( bool $withsub = true ) : array
 	{
-		/** mshop/review/manager/submanagers
+		/** review/manager/submanagers
 		 * List of manager names that can be instantiated by the review manager
 		 *
 		 * Managers provide a generic interface to the underlying storage.
@@ -237,7 +237,7 @@ class Standard
 		 * @since 2014.03
 		 * @category Developer
 		 */
-		$path = 'mshop/review/manager/submanagers';
+		$path = 'review/manager/submanagers';
 
 		return $this->getSearchAttributesBase( $this->searchConfig, $path, [], $withsub );
 	}
@@ -251,13 +251,13 @@ class Standard
 	 */
 	public function deleteItems( array $itemIds ) : \Aimeos\MShop\Common\Manager\Iface
 	{
-		/** mshop/review/manager/standard/delete/mysql
+		/** review/manager/standard/delete/mysql
 		 * Deletes the items matched by the given IDs from the database
 		 *
-		 * @see mshop/review/manager/standard/delete/ansi
+		 * @see review/manager/standard/delete/ansi
 		 */
 
-		/** mshop/review/manager/standard/delete/ansi
+		/** review/manager/standard/delete/ansi
 		 * Deletes the items matched by the given IDs from the database
 		 *
 		 * Removes the records specified by the given IDs from the review database.
@@ -275,13 +275,13 @@ class Standard
 		 * @param string SQL statement for deleting items
 		 * @since 2014.03
 		 * @category Developer
-		 * @see mshop/review/manager/standard/insert/ansi
-		 * @see mshop/review/manager/standard/update/ansi
-		 * @see mshop/review/manager/standard/newid/ansi
-		 * @see mshop/review/manager/standard/search/ansi
-		 * @see mshop/review/manager/standard/count/ansi
+		 * @see review/manager/standard/insert/ansi
+		 * @see review/manager/standard/update/ansi
+		 * @see review/manager/standard/newid/ansi
+		 * @see review/manager/standard/search/ansi
+		 * @see review/manager/standard/count/ansi
 		 */
-		$path = 'mshop/review/manager/standard/delete';
+		$path = 'review/manager/standard/delete';
 
 		return $this->deleteItemsBase( $itemIds, $path )->deleteRefItems( $itemIds );
 	}
@@ -347,13 +347,13 @@ class Standard
 
 			if( $id === null )
 			{
-				/** mshop/review/manager/standard/insert/mysql
+				/** review/manager/standard/insert/mysql
 				 * Inserts a new review record into the database table
 				 *
-				 * @see mshop/review/manager/standard/insert/ansi
+				 * @see review/manager/standard/insert/ansi
 				 */
 
-				/** mshop/review/manager/standard/insert/ansi
+				/** review/manager/standard/insert/ansi
 				 * Inserts a new review record into the database table
 				 *
 				 * Items with no ID yet (i.e. the ID is NULL) will be created in
@@ -376,24 +376,24 @@ class Standard
 				 * @param string SQL statement for inserting records
 				 * @since 2014.03
 				 * @category Developer
-				 * @see mshop/review/manager/standard/update/ansi
-				 * @see mshop/review/manager/standard/newid/ansi
-				 * @see mshop/review/manager/standard/delete/ansi
-				 * @see mshop/review/manager/standard/search/ansi
-				 * @see mshop/review/manager/standard/count/ansi
+				 * @see review/manager/standard/update/ansi
+				 * @see review/manager/standard/newid/ansi
+				 * @see review/manager/standard/delete/ansi
+				 * @see review/manager/standard/search/ansi
+				 * @see review/manager/standard/count/ansi
 				 */
-				$path = 'mshop/review/manager/standard/insert';
+				$path = 'review/manager/standard/insert';
 				$sql = $this->addSqlColumns( array_keys( $columns ), $this->getSqlConfig( $path ) );
 			}
 			else
 			{
-				/** mshop/review/manager/standard/update/mysql
+				/** review/manager/standard/update/mysql
 				 * Updates an existing review record in the database
 				 *
-				 * @see mshop/review/manager/standard/update/ansi
+				 * @see review/manager/standard/update/ansi
 				 */
 
-				/** mshop/review/manager/standard/update/ansi
+				/** review/manager/standard/update/ansi
 				 * Updates an existing review record in the database
 				 *
 				 * Items which already have an ID (i.e. the ID is not NULL) will
@@ -413,13 +413,13 @@ class Standard
 				 * @param string SQL statement for updating records
 				 * @since 2014.03
 				 * @category Developer
-				 * @see mshop/review/manager/standard/insert/ansi
-				 * @see mshop/review/manager/standard/newid/ansi
-				 * @see mshop/review/manager/standard/delete/ansi
-				 * @see mshop/review/manager/standard/search/ansi
-				 * @see mshop/review/manager/standard/count/ansi
+				 * @see review/manager/standard/insert/ansi
+				 * @see review/manager/standard/newid/ansi
+				 * @see review/manager/standard/delete/ansi
+				 * @see review/manager/standard/search/ansi
+				 * @see review/manager/standard/count/ansi
 				 */
-				$path = 'mshop/review/manager/standard/update';
+				$path = 'review/manager/standard/update';
 				$sql = $this->addSqlColumns( array_keys( $columns ), $this->getSqlConfig( $path ), false );
 			}
 
@@ -451,13 +451,13 @@ class Standard
 
 			if( $id === null )
 			{
-				/** mshop/review/manager/standard/newid/mysql
+				/** review/manager/standard/newid/mysql
 				 * Retrieves the ID generated by the database when inserting a new record
 				 *
-				 * @see mshop/review/manager/standard/newid/ansi
+				 * @see review/manager/standard/newid/ansi
 				 */
 
-				/** mshop/review/manager/standard/newid/ansi
+				/** review/manager/standard/newid/ansi
 				 * Retrieves the ID generated by the database when inserting a new record
 				 *
 				 * As soon as a new record is inserted into the database table,
@@ -481,13 +481,13 @@ class Standard
 				 * @param string SQL statement for retrieving the last inserted record ID
 				 * @since 2014.03
 				 * @category Developer
-				 * @see mshop/review/manager/standard/insert/ansi
-				 * @see mshop/review/manager/standard/update/ansi
-				 * @see mshop/review/manager/standard/delete/ansi
-				 * @see mshop/review/manager/standard/search/ansi
-				 * @see mshop/review/manager/standard/count/ansi
+				 * @see review/manager/standard/insert/ansi
+				 * @see review/manager/standard/update/ansi
+				 * @see review/manager/standard/delete/ansi
+				 * @see review/manager/standard/search/ansi
+				 * @see review/manager/standard/count/ansi
 				 */
-				$path = 'mshop/review/manager/standard/newid';
+				$path = 'review/manager/standard/newid';
 				$id = $this->newId( $conn, $path );
 			}
 
@@ -528,11 +528,11 @@ class Standard
 			$required = array( 'review' );
 
 			$level = \Aimeos\MShop\Locale\Manager\Base::SITE_ALL;
-			$level = $context->getConfig()->get( 'mshop/review/manager/sitemode', $level );
+			$level = $context->getConfig()->get( 'review/manager/sitemode', $level );
 
-			$cfgPathSearch = 'mshop/review/manager/standard/search';
+			$cfgPathSearch = 'review/manager/standard/search';
 
-			$cfgPathCount = 'mshop/review/manager/standard/count';
+			$cfgPathCount = 'review/manager/standard/count';
 			$results = $this->searchItemsBase( $conn, $search, $cfgPathSearch, $cfgPathCount, $required, $total, $level );
 
 			while( ( $row = $results->fetch() ) !== null ) {
