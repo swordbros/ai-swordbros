@@ -58,13 +58,13 @@ $enc = $this->encoder();
                                 </h4>
                             </div>
                             <div class="footer-widgets">
-                                <?php paltoTopMenu(); ?>
+                                <?php SwH::topMenu(); ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6"><?php echo swordbros_widgets('mailchimp'); ?></div>
-                <?php echo swordbros_widgets('bitrix24'); ?>
+                <div class="col-lg-6"><?php echo SwH::widgets('mailchimp'); ?></div>
+                <?php echo SwH::widgets('bitrix24'); ?>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@ $enc = $this->encoder();
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <div class="copyright"> <span><?=get_store_info('copyright');?></span></div>
+                    <div class="copyright"> <span><?=SwH::storeInfo('copyright');?></span></div>
                 </div>
                 <div class="col-md-6">
                     <div class="payment"> <img src="

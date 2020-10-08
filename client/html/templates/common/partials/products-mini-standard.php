@@ -163,7 +163,7 @@ $detailFilter = array_flip( $this->config( 'client/html/catalog/detail/url/filte
     $this->config( 'client/html/common/partials/price', 'common/partials/price-standard' ), ['prices' => $productItem->getRefItems( 'price', null, 'default' )]); ?>
 
     </div>
-<?= paltoProductStars($productItem->getId())?>
+<?= SwH::productStars($productItem->getId())?>
 </div>
                                                 </div>
                                             </div>

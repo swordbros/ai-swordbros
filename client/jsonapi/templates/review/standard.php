@@ -44,7 +44,7 @@ $entryFcn = function( \Aimeos\MShop\Review\Item\Iface $item ) use ( $fields, $ta
 	$params = array( 'resource' => $type, 'id' => $id );
 	$data = $item->toArray();
 
-	$data['review.stars'] =  paltoStars($data['review.rating'], '');
+	$data['review.stars'] =  SwH::stars($data['review.rating'], '');
 
 	if( isset( $fields[$type] ) ) {
 		$data = array_intersect_key( $data, $fields[$type] );

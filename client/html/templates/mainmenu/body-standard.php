@@ -150,7 +150,7 @@ $params = ['locale'=> \Route::current()->parameter('locale','ru'), 'currency'=> 
                         </ul>
                     </nav>
                 </div>
-				<?= get_socialbar()?>
+				<?= SwH::socialbar()?>
             </div>
 			
 			
