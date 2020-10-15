@@ -115,6 +115,6 @@ $enc = $this->encoder();
 <script src="<?=asset('/fe/assets/js/plugins/jquery.zoom.min.js')?>"></script> 
 <!-- Timecircles JS --> 
 <script src="<?=asset('/fe/assets/js/plugins/timecircles.js')?>"></script> 
-<!-- Swordbros JS --> 
-<script src="<?=asset('/js/swordbros.js')?>"></script> 
 <script src="<?=asset('/fe/assets/js/main.js')?>"></script> 
+<!-- Swordbros JS --> 
+<script src="<?=asset('/js/swordbros.js')?>?_t<?php echo time(); ?>"></script> 

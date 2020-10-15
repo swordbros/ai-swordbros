@@ -1,1 +1,0 @@
-hakkımızda Başlığı

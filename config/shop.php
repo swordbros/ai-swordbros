@@ -13,6 +13,14 @@ return [
         ],
          ],
        ],
-    ]  
+    ],
+    'i18n' => [
+        'en' => [
+            'admin' => [
+                'swordbros' => [ 'Swordbros' ],
+                'dashboard' => [ 'xorder' ],
+            ]
+        ],
+    ]
 ];
 ?>
