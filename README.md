@@ -31,7 +31,6 @@ Add to your composer.json
         "post-update-cmd": [
             ...
             "@php artisan migrate --path=ext/ai-swordbros/lib/custom/setup/swordbros",
-            "@php artisan migrate --path=ext/ai-swordbros/lib/custom/setup/slider",
             "@php artisan migrate --path=ext/ai-swordbros/lib/custom/setup/review"
         ]
     }
