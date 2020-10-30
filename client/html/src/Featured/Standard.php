@@ -650,10 +650,10 @@ class Standard
 		$sort = $view->param( 'f_sort', $config->get( 'client/html/swordbros/featured/sort', 'relevance' ) );
 		$size = min( max( $view->param( 'l_size', $size ), 1 ), 100 );
 		$page = min( max( $view->param( 'l_page', 1 ), 1 ), $pages );
-
+		$category = $config->get( 'client/html/swordbros/featured/category', '7' );
 		$products = \Aimeos\Controller\Frontend::create( $context, 'product' )
 			->sort( $sort ) // prioritize user sorting over the sorting through relevance and category
-			->category( [7], 'default', $level )
+			->category( [$category], 'default', $level )
             ->slice( 0,8 )
 			->uses( $domains )
 			->search( );

@@ -39,7 +39,7 @@ $enc = $this->encoder();
                                     <li><a href="<?=$enc->attr( $this->url( 'login', null, 'null', ['locale'=> \Route::current()->parameter('locale','ru'), 'currency'=> \Route::current()->parameter('currency','RUB')], [], [] ) )?>">
                                              <?=$this->translate( 'client', 'Login' )?>
                                         </a></li>
-                                    <li><a href="<?=$enc->attr( $this->url( 'register', null, 'null', ['locale'=> \Route::current()->parameter('locale','ru'), 'currency'=> \Route::current()->parameter('currency','RUB')], [], [] ) )?>">
+                                    <li><a href="<?=$enc->attr( $this->url( 'login', null, 'null', ['locale'=> \Route::current()->parameter('locale','ru'), 'currency'=> \Route::current()->parameter('currency','RUB')], [], [] ) )?>">
                                         <?=$this->translate( 'client', 'Register' )?>
                                         </a></li>
                                     <li><a href="<?=$enc->attr( $this->url( 'blog', null, 'null', ['locale'=> \Route::current()->parameter('locale','ru'), 'currency'=> \Route::current()->parameter('currency','RUB'), 'blog_code'=>'help'], [], [] ) )?>">
